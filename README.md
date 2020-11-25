@@ -4,7 +4,7 @@
 
 In this report, I will design a neural network by hand which is shown below. Instead of using a framework of NN, I will implement the function of distinguishing the number (5-9) which is bigger than or equals to 5 with the number (0-5) which is smaller than 5. Basing on the sklearn's dataset, I use *load_digits* to load the dataset where each data point is a 8x8 image of a digit, to train NN on the training set and test the accuracy on the test set.
 
-![nn](.\images\nn.png)
+![nn](https://github.com/David-xyf/Build-the-neural-network-from-the-scratch/raw/main/images/nn.png)
 
 ## Mathematic derivation
 
