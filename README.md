@@ -4,7 +4,7 @@
 
 In this report, I will design a neural network by hand which is shown below. Instead of using a framework of NN, I will implement the function of distinguishing the number (5-9) which is bigger than or equals to 5 with the number (0-5) which is smaller than 5. Basing on the sklearn's dataset, I use *load_digits* to load the dataset where each data point is a 8x8 image of a digit, to train NN on the training set and test the accuracy on the test set.
 
-![nn](F:\Math\assignment\images\nn.png)
+![nn](images\nn.png)
 
 ## Mathematic derivation
 
@@ -30,15 +30,17 @@ In this report, I will design a neural network by hand which is shown below. Ins
    J=-\frac{1}{m}\sum_{i=0}^m [y^{(i)}log(\hat y^{(i)})+(1-y^{(i)})log(1- \hat y^{(i)})]+ \frac {\lambda}{2m}\sum_j w^2_j
    $$
    According to the cost function, I can derive the gradients for $w^{i}$ and $b^i$ (ignore the L2 regularization):
+   
+   
    $$
-   \frac{\part J}{\part w^{[3]}}=\frac{\part J}{\part a^{[3]}}\frac{\part a^{[3]}}{\part z^{[3]}}\frac{\part z^{[3]}}{\part w^{[3]}}\\
-   \frac{\part J}{\part a^{[3]}}=\frac{\part J}{\part \hat y^{[3]}}=-\frac{1}{m}\frac{y-a^{[3]}}{a^{[3]}(1-a^{[3]})}\\
-   \frac{\part a^{[3]}}{\part z^{[3]}}=a^{[3]}(1-a^{[3]})\\
-   \frac{\part z^{[3]}}{\part w^{[3]}}=a^{[2]}\\
+   \frac{\partial J}{\partial w^{[3]}}=\frac{\partial J}{\partial a^{[3]}}\frac{\partial a^{[3]}}{\partial z^{[3]}}\frac{\partial z^{[3]}}{\partial w^{[3]}}\\
+   \frac{\partial J}{\partial a^{[3]}}=\frac{\partial J}{\partial \hat y^{[3]}}=-\frac{1}{m}\frac{y-a^{[3]}}{a^{[3]}(1-a^{[3]})}\\
+   \frac{\partial a^{[3]}}{\partial z^{[3]}}=a^{[3]}(1-a^{[3]})\\
+   \frac{\partial z^{[3]}}{\partial w^{[3]}}=a^{[2]}\\
    $$
    So, after simplifying, the gradients are:
    $$
-   dw^{[3]}=\frac{\part J}{\part w^{[3]}}=\frac{1}{m}(a^{[3]}-y)a^{[2]}=dz^{[3]}*a^{[2]}\\
+   dw^{[3]}=\frac{\partial J}{\partial w^{[3]}}=\frac{1}{m}(a^{[3]}-y)a^{[2]}=dz^{[3]}*a^{[2]}\\
    db^{[3]}=\frac{1}{m}(a^{[3]}-y)=dz^{[3]}
    $$
    Basing on the chain rule, we can easily get general formulas to calculate all gradients on every layer:
@@ -46,9 +48,9 @@ In this report, I will design a neural network by hand which is shown below. Ins
    da^{[l]}=w^{[l+1]}dz^{[l+1]}\\
    dz^{[l]}=da^{[l]}g'(z^{[l]})\\
    dw^{[l]}=dz^{[l]}a^{[l-1]}\\
-   db^{[l]}=dz^{[l]}
+db^{[l]}=dz^{[l]}
    $$
-
+   
 4. After training weights based on gradient descent, we can get NN to **clarify the number which is bigger or less than 5**. If the number is less than 5, the output will be nearly 0. Otherwise, that will be closed to 1.   
 
 # Implementation
@@ -207,11 +209,11 @@ if __name__ == '__main__':
 
 #### Results
 
-![accuracies-iterations-fixed](F:\Math\assignment\images\accuracies-iterations-fixed.png)
+![accuracies-iterations-fixed](images\accuracies-iterations-fixed.png)
 
-![costs-iterations-fixed](F:\Math\assignment\images\costs-iterations-fixed.png)
+![costs-iterations-fixed](images\costs-iterations-fixed.png)
 
-![accuracies-costs-fixed](F:\Math\assignment\images\accuracies-costs-fixed.png)
+![accuracies-costs-fixed](images\accuracies-costs-fixed.png)
 
 #### Pros and Cons
 
@@ -420,11 +422,11 @@ def main():
 
 #### Results
 
-![accuracies-iterations-L2](F:\Math\assignment\images\accuracies-iterations-L2.png)
+![accuracies-iterations-L2](images\accuracies-iterations-L2.png)
 
-![costs-iterations-L2](F:\Math\assignment\images\costs-iterations-L2.png)
+![costs-iterations-L2](images\costs-iterations-L2.png)
 
-![accuracies-costs-L2](F:\Math\assignment\images\accuracies-costs-L2.png)
+![accuracies-costs-L2](images\accuracies-costs-L2.png)
 
 #### Pros and Cons
 
