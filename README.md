@@ -209,11 +209,11 @@ if __name__ == '__main__':
 
 #### Results
 
-![accuracies-iterations-fixed](images\accuracies-iterations-fixed.png)
+![accuracies-iterations-fixed](https://github.com/David-xyf/Build-the-neural-network-from-the-scratch/raw/main/images/accuracies-iterations-fixed.png)
 
-![costs-iterations-fixed](images\costs-iterations-fixed.png)
+![costs-iterations-fixed](https://github.com/David-xyf/Build-the-neural-network-from-the-scratch/raw/main/images/costs-iterations-fixed.png)
 
-![accuracies-costs-fixed](images\accuracies-costs-fixed.png)
+![accuracies-costs-fixed](https://github.com/David-xyf/Build-the-neural-network-from-the-scratch/raw/main/images/accuracies-costs-fixed.png)
 
 #### Pros and Cons
 
@@ -422,11 +422,11 @@ def main():
 
 #### Results
 
-![accuracies-iterations-L2](images\accuracies-iterations-L2.png)
+![accuracies-iterations-L2](https://github.com/David-xyf/Build-the-neural-network-from-the-scratch/raw/main/images/accuracies-iterations-L2.png)
 
-![costs-iterations-L2](images\costs-iterations-L2.png)
+![costs-iterations-L2](https://github.com/David-xyf/Build-the-neural-network-from-the-scratch/raw/main/images/costs-iterations-L2.png)
 
-![accuracies-costs-L2](images\accuracies-costs-L2.png)
+![accuracies-costs-L2](https://github.com/David-xyf/Build-the-neural-network-from-the-scratch/raw/main/images/accuracies-costs-L2.png)
 
 #### Pros and Cons
 
